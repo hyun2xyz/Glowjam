@@ -56,6 +56,11 @@ Adobe After Effects를 위한 2.5D AI 공간 조명 리라이팅 플러그인 **
 * **Size:** 조명의 반경(크기)
 * **Softness:** 조명 가장자리의 부드러운 감쇄 정도
 * **Mix:** 원본 영상과 리라이팅 결과물의 합성 비율
+* **Light Mode:** `Spread`는 주변으로 퍼지는 기본 조명, `Directional`은 한 방향의 평행광,
+  `Spot`은 방향과 원뿔을 함께 쓰는 조명입니다.
+* **Direction:** Directional/Spot 모드의 화면 기준 빛 방향입니다. 컴포지션의 화살표 또는
+  콘 가이드를 드래그해도 조정할 수 있습니다.
+* **Cone Angle:** Spot 모드의 빛 원뿔 각도입니다.
 
 ---
 

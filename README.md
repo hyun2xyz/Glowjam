@@ -19,8 +19,8 @@
 **Glow Jam**은 Adobe After Effects를 위한 **2.5D AI 공간 조명 리라이팅 및 실시간 깊이(Depth) 추론 플러그인**입니다.  
 복잡한 3D 툴을 거치지 않고도, 2D 영상 푸티지나 일러스트레이션 위에서 AI가 직접 전후 공간을 인식하여 입체적인 조명과 그림자를 자유자재로 연출할 수 있습니다.
 
-* **Glow Jam (2.5D Relighting):** 2D 평면 레이어 위에 3차원 공간 조명(Point, Directional, Spot) 배치 및 광원 색상, 강도, 감쇄 실시간 조절
-* **Depth Jam (AI Depth Map):** 내장된 경량 AI 가중치 모델(Distill Any Depth Base)을 통해 클릭 한 번으로 고품질 흑백 뎁스맵 자동 추출
+* **Glow Jam (2.5D Relighting):** 2D 평면 레이어 위에 Spread, Directional, Spot 조명을 배치하고 방향, 색상, 강도, 반경을 조절
+* **Depth Jam (AI Depth Map):** Distill Any Depth Base 기반의 로컬 뎁스맵 추론과 256/512 px 품질 선택
 
 ---
 
@@ -48,7 +48,7 @@
 1. 최신 Windows 패키지 압축을 해제합니다.
 2. **방법 A (원클릭 자동 설치 - 권장):**
    - `windows/원클릭_자동설치(우클릭후_관리자권한실행).bat` 파일을 마우스 우클릭 → **[관리자 권한으로 실행]**을 클릭합니다.
-   - 자동으로 시스템 내 Adobe MediaCore 경로와 ProgramData를 감지하여 플러그인과 AI 가중치 모델을 1초 만에 세팅합니다.
+   - 자동으로 Adobe MediaCore 경로와 ProgramData를 감지하여 Glow Jam 플러그인과 로컬 런타임 파일을 설치합니다.
 3. **방법 B (수동 복사 설치):**
    - 플러그인(`.aex`) 복사:  
      `C:\Program Files\Adobe\Common\Plug-ins\7.0\MediaCore\glow_jam\`
@@ -63,7 +63,7 @@ After Effects를 실행한 뒤 효과를 적용할 레이어를 선택합니다:
 
 1. 상단 메뉴 **`Effect` → `glow_jam`**으로 이동합니다.
    * **`Depth Jam`**: 영상에서 실시간으로 3D 뎁스맵을 계산합니다.
-   * **`Glow Jam`**: `Surface Layer`에 뎁스맵 레이어를 연결하고, 화면 위의 조명 핸들과 Z 깊이를 조절하여 3D 빛을 연출합니다.
+   * **`Glow Jam`**: `Surface Layer`에 뎁스맵 레이어를 연결하고, 화면 위의 조명 핸들과 Z 깊이를 조절하여 3D 빛을 연출합니다. `Light Mode`에서 Spread, Directional, Spot을 선택하고 Direction 가이드와 Spot Cone Angle을 조절할 수 있습니다.
 2. 세부 조작법 및 단축키 안내는 [**상세 사용자 가이드 (USER_GUIDE.ko.md)**](docs/USER_GUIDE.ko.md)를 참고해 주세요.
 
 ---
@@ -72,9 +72,9 @@ After Effects를 실행한 뒤 효과를 적용할 레이어를 선택합니다:
 
 * **Glow Jam 플러그인:** [MIT License](LICENSE) (Copyright © 2026 Hyun Kim)
 * **ONNX Runtime:** MIT License (Copyright © Microsoft Corporation)
-* **AI 가중치 모델 (Distill Any Depth / Depth Anything V2):**  
-  - 본 릴리스에 내장된 `Distill Any Depth Base` ONNX 모델은 기술 검증 및 비상업적 평가/교육 용도로 패키징되어 있습니다.
-  - 상업적 용도의 배포 또는 라이선스 세부 사항은 [**제3자 고지문 (THIRD_PARTY_NOTICES.md)**](docs/THIRD_PARTY_NOTICES.md)을 확인해 주세요.
+* **AI 가중치 모델 (Distill Any Depth Base):**
+  - 모델과 ONNX Runtime의 정확한 버전, 해시, 재배포 조건은 [**제3자 고지문 (THIRD_PARTY_NOTICES.md)**](docs/THIRD_PARTY_NOTICES.md)을 확인해 주세요.
+  - 상업적 판매본에는 모델의 상업적 사용 및 가중치 재배포 권리를 확인한 경우에만 포함해야 합니다.
 
 ---
 
